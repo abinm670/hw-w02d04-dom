@@ -1,0 +1,218 @@
+diff --git a/aboutme.html b/aboutme.html
+index cbfbab9..66753a0 100644
+--- a/aboutme.html
++++ b/aboutme.html
+@@ -1,24 +1,27 @@
+ <!DOCTYPE html>
+ <html lang="en">
+-  <head>
+-    <meta charset="UTF-8" />
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+-    <title>More DOM Manipulation</title>
+-  </head>
+ 
+-  <body>
+-    <h1>About Me</h1>
+-    <script src="answer.js"></script>
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
++  <title>More DOM Manipulation</title>
+ 
+-    <div class="profilePicture"></div>
++</head>
+ 
+-    <ul>
+-      <li>Nickname: <span id="nickname"></span></li>
+-      <li>Favorite Animal: <span id="favorite"></span></li>
+-      <li>Hometown: <span id="hometown"></span></li>
+-    </ul>
++<body>
++  <h1>About Me</h1>
+ 
+-    <div class="favoriteBooks"></div>
+-  </body>
+-</html>
++  <div class="profilePicture"></div>
++
++  <ul>
++    <li>Nickname: <span id="nickname"></span></li>
++    <li>Favorite Animal: <span id="favorite"></span></li>
++    <li>Hometown: <span id="hometown"></span></li>
++  </ul>
++
++  <div class="favoriteBooks">oakkkkkk</div>
++</body>
++<script type="text/javascript" src="answer.js"></script>
++
++</html>
+\ No newline at end of file
+diff --git a/answer.js b/answer.js
+index 28dd9c0..e06ecf9 100644
+--- a/answer.js
++++ b/answer.js
+@@ -6,36 +6,6 @@ Change each li's text color to "rebeccapurple"
+ Create a new img element and set its src attribute to a picture of you. Put that new img element in the div with the class of "profilePicture"
+ */
+ 
+-window.onload = function() {
+-  // /* get the element*/
+-
+-  var newImg = document.createElement("img");
+-  var src = document.createAttribute("src");
+-  var id = document.createAttribute("id");
+-  var width = document.createAttribute("width");
+-  var hight = document.createAttribute("hight");
+-
+-  document.body.appendChild(newImg);
+-
+-  //set Attributes to the new img node
+-
+-  newImg.setAttribute("id", "changeSize");
+-
+-  //get the value from the input
+-  //   var width1 = input.getAttribute("width");
+-  //   var hight1 = input.getAttribute("hight");
+-
+-  var myButton = document.querySelector("#randomize");
+-
+-  myButton.addEventListener("click", function() {
+-    node element add new src with new src atribu that been created.
+-    document.getElementById("changeSize").width = width1;
+-    document.getElementById("changeSize").hight = hight1;
+-    newImg.setAttribute("src", "https://source.unsplash.com/1600x900");
+-  });
+-  // };
+-};
+-
+-// var body = body.getAttribute(style);
+-// //
+-// alert(body);
++var body = body.getAttribute(style);
++//
++alert("what");
+diff --git a/getImg.js b/getImg.js
+index a9c8afd..70ae467 100644
+--- a/getImg.js
++++ b/getImg.js
+@@ -1,29 +1,38 @@
+-window.onload = function() {
+-  // /* get the element*/
++// window.onload = function () {
++// /* get the element*/
+ 
+-  var newImg = document.createElement("img");
+-  var src = document.createAttribute("src");
+-  var id = document.createAttribute("id");
+-  var width = document.createAttribute("width");
+-  var hight = document.createAttribute("hight");
++var newImg = document.createElement("img");
++var src = document.createAttribute("src");
++var id = document.createAttribute("id");
++var width = document.createAttribute("width");
++var hight = document.createAttribute("hight");
+ 
+-  document.body.appendChild(newImg);
++var img = document.querySelector(".image1")
++img.appendChild(newImg);
+ 
+-  //set Attributes to the new img node
++//set Attributes to the new img node
+ 
+-  newImg.setAttribute("id", "changeSize");
++newImg.setAttribute("id", "changeSize");
+ 
+-  //get the value from the input
+-  var width1 = input.getAttribute("width");
+-  var hight1 = input.getAttribute("hight");
++//get the value from the input
+ 
+-  var myButton = document.querySelector("#randomize");
+ 
+-  myButton.addEventListener("click", function() {
+-    //node element add new src with new src atribu that been created.
+-    document.getElementById("changeSize").width = width1;
+-    document.getElementById("changeSize").hight = hight1;
+-    newImg.setAttribute("src", "https://source.unsplash.com/1600x900");
+-  });
+-  // };
+-};
++
++var myButton = document.querySelector("#randomize");
++
++myButton.addEventListener("click", function () {
++  //node element add new src with new src atribu that been created.
++  var hight = document.querySelector(".height")
++  var width = document.querySelector(".width")
++
++
++  document.querySelector("#changeSize").width = width.value;
++  document.querySelector("#changeSize").height = hight.value;
++  newImg.setAttribute("src", "https://source.unsplash.com/1600x900");
++
++});
++
++  // console.log(hight)
++
++
++// }
+\ No newline at end of file
+diff --git a/randomImage.html b/randomImage.html
+index 88700d2..524ef50 100644
+--- a/randomImage.html
++++ b/randomImage.html
+@@ -1,26 +1,29 @@
+ <!DOCTYPE html>
+ <html lang="en">
+-  <head>
+-    <meta charset="UTF-8" />
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+-    <title>Document</title>
+-    <script type="text/javascript" src="getImg.js"></script>
+-  </head>
+ 
+-  <body>
+-    <div>
+-      <label>
+-        Width:
+-        <input type="number" class="width" />
+-      </label>
+-      <label>
+-        Height:
+-        <input type="number" class="height" />
+-      </label>
+-      <button id="randomize">Get random image!</button>
+-    </div>
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
++  <title>Document</title>
+ 
+-    <!-- <div class="image"></div> -->
+-  </body>
+-</html>
++</head>
++
++<body>
++  <div>
++    <label>
++      Width:
++      <input type="number" class="width" />
++    </label>
++    <label>
++      Height:
++      <input type="number" class="height" />
++    </label>
++    <button id="randomize">Get random image!</button>
++  </div>
++
++  <div class="image1"></div>
++</body>
++<script type="text/javascript" src="getImg.js"></script>
++
++</html>
+\ No newline at end of file
